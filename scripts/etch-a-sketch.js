@@ -1,4 +1,5 @@
 const config = {
+    drawing: true,
     colorMode: "black",
     showGridlines: true,
     dimension: 16,
@@ -14,6 +15,7 @@ wireResetButton();
 wireColorSelectionButtons();
 wireSetDimensionButton();
 wireToggleGridlinesButton();
+wireClickToggling();
 renderGrid();
 
 function renderGrid() {
@@ -34,6 +36,9 @@ function renderGrid() {
             const newGridBox = document.createElement('div');
             newGridBox.classList.add('grid-block');
             newGridBox.addEventListener('mouseover', (e) => {
+                if (!config.drawing) {
+                    return;
+                }
                 if (config.colorMode === "black") {
                     e.target.style.backgroundColor = "black";
                 } else if (config.colorMode === "rgb") {
@@ -116,6 +121,13 @@ function wireColorSelectionButtons() {
     grayscaleButton.addEventListener('click', (e) => {
         config.colorMode = "grayscale";
     });
+}
+
+function wireClickToggling() {
+    const container = document.querySelector("#container");
+    container.addEventListener('click', (e) => {
+        config.drawing = !config.drawing;
+    })
 }
 
 function randomRGBValue() {
