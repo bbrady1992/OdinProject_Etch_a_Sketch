@@ -1,0 +1,43 @@
+html, body {
+    background-color: #a4a4a4;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    height: 960px;
+    width: 960px;
+    padding: 10px;
+    border-color: #494949;
+    border-style: groove;
+    border-width: 15px;
+}
+
+#controller, #color-picker {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    padding: 10px;
+}
+
+.grid-row {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background-color: #ffffff;
+    flex: 1;
+}
+
+.grid-block {
+    outline-color: rgb(0, 0, 0, 1);
+    outline-style: solid;
+    outline-width: 1px;
+    flex: 1;
+}
